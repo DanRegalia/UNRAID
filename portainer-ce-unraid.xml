@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2020-12-08</Date>
+  <Beta>False</Beta>
+  <Category>Docker:</Category>
+  <Name>Portainer-CE</Name>
+  <Project>https://www.portainer.io/</Project>
+  <Changes>
+[center][img width='155px' src='https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png'][/center]
+
+[font size=3]2020.11.10[/font]
+- Initial Release (Sync version 2)
+[font size=3]2020.12.08[/font]
+- Initial Release (Sync version 2.1)
+    - Added link to new support forum topic on Unraid
+    - Changed Docker socket to path (per previous version)
+    - Changed config directory from /config to /data (per previous version)
+    - Added Docker volume
+  </Changes>
+  <Overview>
+    Portainer is a lightweight management UI which allows you to easily manage your Docker AND Kubernetes clusters.
+  </Overview>
+  <Description>
+    Portainer is meant to be as simple to deploy as it is to use. It consists of a single container that can run on any Cluster.
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/portainer/portainer-ce</Registry>
+  <GitHub>https://github.com/DanRegalia/Portainer-CE-Unraid</GitHub>
+  <Repository>portainer/portainer-ce</Repository>
+  <Support>https://forums.unraid.net/topic/99880-support-portainer-ce/</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9000</HostPort>
+        <ContainerPort>9000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/portainer-ce</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:9000]/</WebUI>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web Interface Port" Target="9000" Default="9000" Mode="tcp" Display="always-visible" Required="true"
+       Description="This is Portainer's Web UI port you can access via a web browser.">9000</Config>
+
+  <Config Type="Path" Name="Config Storage Path" Target="/data" Default="/mnt/user/appdata/portainer-ce" Mode="rw" Display="always-visible" Required="true"
+       Description="This is where Portainer will store its databases and configuration.">/mnt/user/appdata/portainer-ce</Config>
+
+  <Config Type="Path" Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is needed for Portainer to connect to Docker.">/var/run/docker.sock</Config>
+
+</Container>
