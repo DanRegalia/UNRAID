@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2021-02-24</Date>
+  <Beta>False</Beta>
+  <Category>Docker:</Category>
+  <Name>Apache NIFI</Name>
+  <Project>https://nifi.apache.org/</Project>
+  <Changes>
+[center][img width='155px' src='https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png'][/center]
+
+[font size=3]2021.02.24[/font]
+- Initial Release
+  </Changes>
+  <Overview>
+    Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.
+  </Overview>
+  <Description>
+   Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.
+  </Description>
+  <Registry>https://hub.docker.com/r/apache/nifi/</Registry>
+  <GitHub>https://github.com/DanRegalia/NIFI-Unraid</GitHub>
+  <Repository>apache/nifi</Repository>
+  <Support>https://forums.unraid.net/topic/103150-support-apache-nifi/</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <WebUI>http://[IP]:[PORT:8080]/nifi/</WebUI>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web Interface Port" Target="8080" Default="8080" Mode="tcp" Display="always-visible" Required="true"
+       Description="This is NIFIs Web UI port you can access via a web browser.">8080</Config>
+
+  <Config Type="Path" Name="Config Storage Path" Target="/nifi" Default="/mnt/user/appdata/nifi" Mode="rw" Display="always-visible" Required="true"
+       Description="This is where NIFI will store its databases and configuration.">/mnt/user/appdata/nifi</Config>
+
+
+</Container>
