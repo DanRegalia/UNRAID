@@ -28,21 +28,21 @@
     <Mode>host</Mode>
     <Publish>
       <Port>
-        <HostPort>10080</HostPort>
+        <HostPort>8080</HostPort>
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
-  <WebUI>http://[IP]:[PORT:10080]/ui/</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]/ui/</WebUI>
   <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
-  <Config Type="Port" Name="Web Interface Port" Target="10080" Default="10080" Mode="tcp" Display="always-visible" Required="true"
-       Description="This is HOPs Web UI port you can access via a web browser.">10080</Config>
+  <Config Type="Port" Name="Web Interface Port" Target="8080" Default="8080" Mode="tcp" Display="always-visible" Required="true"
+       Description="This is HOPs Web UI port you can access via a web browser.">8080</Config>
 
-  <Config Type="Path" Name="Config Storage Path" Target="/ui" Default="/mnt/user/appdata/hopweb" Mode="rw" Display="always-visible" Required="true"
+  <Config Type="Path" Name="Config Storage Path" Target="" Default="/mnt/user/appdata/hopweb" Mode="rw" Display="always-visible" Required="true"
        Description="This is where Apache Hop-Web will store its databases and configuration.">/mnt/user/appdata/hopweb</Config>
 
 
