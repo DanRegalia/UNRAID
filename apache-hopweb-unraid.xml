@@ -19,13 +19,13 @@
   </Description>
   <Registry>https://hub.docker.com/r/apache/hop-web/</Registry>
   <GitHub>https://github.com/DanRegalia/apache-hopweb-unraid.xml</GitHub>
-  <Repository>apache/nifi</Repository>
+  <Repository>apache/hop-web</Repository>
   <Support>https://forums.unraid.net/topic/103150-support-apache-nifi/</Support>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
   <Networking>
-    <Mode>bridge</Mode>
+    <Mode>host</Mode>
     <Publish>
       <Port>
         <HostPort>10080</HostPort>
@@ -42,8 +42,8 @@
   <Config Type="Port" Name="Web Interface Port" Target="10080" Default="10080" Mode="tcp" Display="always-visible" Required="true"
        Description="This is HOPs Web UI port you can access via a web browser.">10080</Config>
 
-  <Config Type="Path" Name="Config Storage Path" Target="/ui" Default="/mnt/user/appdata/ui" Mode="rw" Display="always-visible" Required="true"
-       Description="This is where Apache Hop-Web will store its databases and configuration.">/mnt/user/appdata/ui</Config>
+  <Config Type="Path" Name="Config Storage Path" Target="/ui" Default="/mnt/user/appdata/hopweb" Mode="rw" Display="always-visible" Required="true"
+       Description="This is where Apache Hop-Web will store its databases and configuration.">/mnt/user/appdata/hopweb</Config>
 
 
 </Container>
