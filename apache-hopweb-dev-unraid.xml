@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2023-01-23</Date>
+  <Beta>False</Beta>
+  <Category>Docker:</Category>
+  <Name>Apache HOP Web DevBranch</Name>
+  <Project>https://hop.apache.org/</Project>
+  <Changes>
+[center][img width='155px' src='https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png'][/center]
+
+[font size=3]2023.01.23[/font]
+- Initial Release
+  </Changes>
+  <Overview>
+    Built this into the Dev Branch, as Production is 2 months old.
+  </Overview>
+  <Description>
+   Hop aims to be the future of data integration. Visual development enables developers to be more productive than they can be through code. Our Design once, run anywhere workflows and pipelines can be designed in the Hop Gui and run on the Hop native engine (local or remote), or on Spark, Flink, Google Dataflow or AWS EMR through Beam. Lifecycle Management enables developers and administrators to switch between projects, environments and purposes without leaving your train of thought. 
+  </Description>
+  <Registry>https://hub.docker.com/r/apache/hop-web/</Registry>
+  <GitHub>https://github.com/DanRegalia/apache-hopweb-unraid.xml</GitHub>
+  <Repository>apache/hop:Development</Repository>
+  <Support>https://forums.unraid.net/topic/103150-support-apache-nifi/</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>10880</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <WebUI>http://[IP]:[PORT:10880]/ui/</WebUI>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web Interface Port" Target="10880" Default="10880" Mode="tcp" Display="always-visible" Required="true"
+       Description="This is HOPs Web UI port you can access via a web browser.">10880</Config>
+
+  <Config Type="Path" Name="Config Storage Path" Target="" Default="/mnt/user/appdata/hopwebdev" Mode="rw" Display="always-visible" Required="true"
+       Description="This is where Apache Hop-Web will store its databases and configuration.">/mnt/user/appdata/hopwebdev</Config>
+
+
+</Container>
